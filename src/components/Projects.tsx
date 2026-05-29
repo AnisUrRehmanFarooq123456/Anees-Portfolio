@@ -1,5 +1,13 @@
 const projects = [
   {
+    title: "LearnTube",
+    description:
+      "LearnTube is an e-learning platform built with Next.js and TypeScript for exploring categorized courses and curated educational playlists in a clean, responsive interface.",
+    tech: "NEXT JS + TypeScript",
+    link: "learntube-project.vercel.app",
+  },
+
+  {
     title: "Helplytics AI",
     description:
       "React authentication application with local storage, login/signup and modern UI.",

@@ -1,5 +1,12 @@
 const projects = [
   {
+    title: "TechSolution",
+    description:
+      "A modern and responsive e-learning platform built with HTML, CSS, JavaScript, TypeScript, React, and Next.js, providing web development courses and interactive learning experiences with a clean and user-friendly interface.",
+    tech: "NEXT JS + TypeScript",
+    link: "https://tech-solution-psi.vercel.app/",
+  },
+  {
     title: "LearnTube",
     description:
       "LearnTube is an e-learning platform built with Next.js and TypeScript for exploring categorized courses and curated educational playlists in a clean, responsive interface.",

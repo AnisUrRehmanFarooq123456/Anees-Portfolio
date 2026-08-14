@@ -89,7 +89,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4 mt-9">
               <a
-                href="/cv/Anees Ur Rehman Farooq.pdf"
+                href="/cv/Anees Ur Rehman Farooq CV.pdf"
                 download
                 className="primary-btn"
               >

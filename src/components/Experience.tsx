@@ -2,19 +2,20 @@ const experiences = [
   {
     role: "Accountant",
     company: "Embroideries",
-    duration: "2025 - Present",
+    duration: "2025 — Present",
+    color: "var(--green)",
   },
-
   {
     role: "Data Entry Operator",
     company: "Liberty Mills Limited",
     duration: "2025",
+    color: "var(--teal)",
   },
-
   {
     role: "Teacher",
     company: "SS Programmer School",
-    duration: "2024 - 2025",
+    duration: "2024 — 2025",
+    color: "var(--amber)",
   },
 ];
 
@@ -22,20 +23,29 @@ const Experience = () => {
   return (
     <section id="experience" className="section-padding">
       <div className="container-width">
-        <h2 className="text-4xl font-bold gradient-text text-center mb-16">
+        <span className="section-eyebrow" style={{ fontSize: "3rem" }}>
           Experience
-        </h2>
+        </span>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {experiences.map((item) => (
-            <div key={item.role} className="glass rounded-3xl p-8 card-hover">
-              <h3 className="text-2xl font-bold mb-4">{item.role}</h3>
-
-              <p className="text-blue-400 mb-4">{item.company}</p>
-
-              <p className="text-gray-400">{item.duration}</p>
-            </div>
-          ))}
+        <div className="glass rounded-2xl p-8 md:p-10 max-w-3xl">
+          <div className="space-y-10">
+            {experiences.map((item) => (
+              <div key={item.role} className="commit-line">
+                <span
+                  className="commit-dot"
+                  style={{ background: item.color }}
+                  aria-hidden="true"
+                />
+                <p className="font-mono text-xs text-[color:var(--text-muted)] mb-2">
+                  {item.duration}
+                </p>
+                <h3 className="font-display text-xl font-bold mb-1">
+                  {item.role}
+                </h3>
+                <p style={{ color: item.color }}>{item.company}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,25 +1,93 @@
+const stats = [
+  {
+    value: "2",
+    label: "Hackathons Completed",
+    color: "var(--rose)",
+    big: true,
+  },
+  {
+    value: "6+",
+    label: "Real Projects Completed",
+    color: "var(--amber)",
+    big: true,
+  },
+  {
+    value: "React / Next",
+    label: "Frontend Development",
+    color: "var(--teal)",
+    big: false,
+  },
+  {
+    value: "UI / UX",
+    label: "Responsive Interface Design",
+    color: "var(--violet)",
+    big: false,
+  },
+];
+
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center section-padding">
+    <section className="min-h-screen flex items-center section-padding pt-32">
       <div className="container-width w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="uppercase tracking-[6px] text-blue-400 mb-6 text-lg">
-              Frontend Web Developer
-            </p>
+            <span className="section-eyebrow">Frontend Web Developer</span>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="font-display text-5xl md:text-6xl font-bold leading-[1.08]">
               Anees Ur <br />
               <span className="gradient-text">Rehman Farooq</span>
             </h1>
 
-            <p className="text-gray-400 leading-9 mt-8 text-lg max-w-2xl">
-              Frontend Developer skilled in React, Next.js, TypeScript and
-              responsive UI development. Passionate about building modern,
-              scalable and clean web applications.
-            </p>
+            {/* Terminal window — signature element */}
+            <div className="terminal-window mt-8 max-w-xl">
+              <div className="terminal-bar">
+                <span
+                  className="terminal-dot"
+                  style={{ background: "#fb7185" }}
+                />
+                <span
+                  className="terminal-dot"
+                  style={{ background: "#f2b544" }}
+                />
+                <span
+                  className="terminal-dot"
+                  style={{ background: "#7ee08a" }}
+                />
+                <span className="terminal-filename">about.ts</span>
+              </div>
+              <div className="terminal-body text-sm md:text-[15px] leading-8">
+                <p>
+                  <span className="terminal-prompt">const</span>{" "}
+                  <span className="terminal-key">developer</span> = {"{"}
+                </p>
+                <p className="pl-4 text-[color:var(--text-muted)]">
+                  stack:{" "}
+                  <span className="terminal-string">
+                    &quot;React, Next.js, TypeScript&quot;
+                  </span>
+                  ,
+                </p>
+                <p className="pl-4 text-[color:var(--text-muted)]">
+                  focus:{" "}
+                  <span className="terminal-string">
+                    &quot;clean, scalable, responsive UI&quot;
+                  </span>
+                  ,
+                </p>
+                <p className="pl-4 text-[color:var(--text-muted)]">
+                  background:{" "}
+                  <span className="terminal-string">
+                    &quot;accounting &amp; teaching → software engineering&quot;
+                  </span>
+                </p>
+                <p>
+                  {"}"}
+                  <span className="caret" aria-hidden="true" />
+                </p>
+              </div>
+            </div>
 
-            <div className="flex flex-wrap gap-5 mt-10">
+            <div className="flex flex-wrap gap-4 mt-9">
               <a
                 href="/cv/Anees Ur Rehman Farooq.pdf"
                 download
@@ -31,6 +99,7 @@ const Hero = () => {
               <a
                 href="https://wa.me/923022217117"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="secondary-btn"
               >
                 WhatsApp
@@ -43,42 +112,29 @@ const Hero = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-5">
-            <div className="glass grid-card card-hover h-[220px] flex flex-col justify-center items-center text-center">
-              <h3 className="text-7xl font-bold text-[#61A3FA]">6+</h3>
-
-              <p className="text-gray-400 text-lg mt-6">
-                Real Projects Completed
-              </p>
-            </div>
-
-            <div className="glass grid-card card-hover h-[220px] flex flex-col justify-between mt-10">
-              <div className="flex flex-col items-center text-center justify-center flex-1">
-                <h3 className="text-4xl font-bold text-[#61A3FA]">MERN</h3>
-
-                <p className="text-gray-400 mt-6">
-                  Full Stack Learning Journey
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="glass stat-card card-hover h-[180px] flex flex-col items-center justify-center text-center"
+              >
+                <span
+                  className="stat-dot mb-4"
+                  style={{ background: stat.color }}
+                  aria-hidden="true"
+                />
+                <h3
+                  className={`stat-number leading-tight ${
+                    stat.big ? "text-4xl md:text-5xl" : "text-xl md:text-2xl"
+                  }`}
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </h3>
+                <p className="text-[color:var(--text-muted)] text-lg mt-3">
+                  {stat.label}
                 </p>
               </div>
-            </div>
-            <div className="glass grid-card card-hover h-[220px] flex flex-col justify-between">
-              <div className="flex flex-col items-center text-center justify-center flex-1">
-                <h3 className="text-4xl font-bold text-[#61A3FA]">React</h3>
-
-                <p className="text-gray-400 text-lg mt-6">
-                  Frontend Development
-                </p>
-              </div>
-            </div>
-
-            <div className="glass grid-card card-hover h-[220px] flex flex-col justify-between mt-10">
-              <div className="flex flex-col items-center text-center justify-center flex-1">
-                <h3 className="text-4xl font-bold text-[#61A3FA]">UI/UX</h3>
-
-                <p className="text-gray-400 mt-6">
-                  Responsive Interface Design
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 py-8 text-center text-gray-400">
-      © 2026 Anees Ur Rehman Farooq. All Rights Reserved.
+    <footer className="border-t border-[color:var(--border)] py-8 text-center">
+      <p className="font-mono text-sm text-[color:var(--text-faint)]">
+        © 2026 Anees Ur Rehman Farooq. All Rights Reserved.
+      </p>
     </footer>
   );
 };

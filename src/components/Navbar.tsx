@@ -1,5 +1,4 @@
 "use client";
-
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
@@ -24,7 +23,7 @@ const Navbar = () => {
         <div className="container-width an-navbar-container">
           {/* Logo */}
           <a href="#top" className="an-navbar-logo">
-            Anees.dev
+            Anees<span className="ext">.dev</span>
           </a>
 
           {/* Desktop Menu */}
@@ -40,19 +39,21 @@ const Navbar = () => {
 
           {/* Hire Button */}
           <a
-            href="mailto:yourmail@gmail.com"
+            href="mailto:anees2217117@gmail.com"
             className="an-hire-btn hidden md:flex"
           >
             Hire Me
-            <ArrowUpRight size={18} />
+            <ArrowUpRight size={16} />
           </a>
 
           {/* Mobile Menu Button */}
           <button
             className="an-mobile-btn md:hidden"
             onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+            {open ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
 
@@ -72,11 +73,11 @@ const Navbar = () => {
               ))}
 
               <a
-                href="mailto:yourmail@gmail.com"
+                href="mailto:anees2217117@gmail.com"
                 className="an-hire-btn an-mobile-hire"
               >
                 Hire Me
-                <ArrowUpRight size={18} />
+                <ArrowUpRight size={16} />
               </a>
             </div>
           </div>

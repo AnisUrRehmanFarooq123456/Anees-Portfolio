@@ -2,12 +2,16 @@ const Contact = () => {
   return (
     <section id="contact" className="section-padding">
       <div className="container-width">
-        <div className="glass rounded-[40px] p-10 md:p-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
-            Let's Work Together
+        <div className="glass rounded-3xl p-10 md:p-16 text-center">
+          <span className="section-eyebrow" style={{ fontSize: "3rem" }}>
+          Contact
+        </span>
+
+          <h2 className="section-heading gradient-text mb-8">
+            Let&apos;s Work Together
           </h2>
 
-          <p className="text-gray-400 text-lg leading-9 max-w-3xl mx-auto">
+          <p className="text-[color:var(--text-muted)] text-lg leading-9 max-w-3xl mx-auto">
             Interested in collaborating or hiring me for frontend development
             projects? Feel free to contact me anytime.
           </p>
@@ -20,6 +24,7 @@ const Contact = () => {
             <a
               href="https://wa.me/923022217117"
               target="_blank"
+              rel="noopener noreferrer"
               className="secondary-btn"
             >
               WhatsApp
